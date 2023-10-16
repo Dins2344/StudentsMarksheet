@@ -2,9 +2,8 @@ const User = require("../configure/userModal");
 const mongodb = require("mongodb");
 
 module.exports = {
-  addUser: async (records) => {
-    console.log(records);
-    const newRecord = new User(records);
+  addUser: async (record) => {
+    const newRecord = new User(record);
     const response = await newRecord.save();
     return response;
   },
