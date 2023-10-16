@@ -1,0 +1,22 @@
+{
+  "name": "students-results",
+  "version": "1.0.0",
+  "description": "assesment fot Simplyfi",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "author": "Dinson",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "fast-csv": "^4.3.6",
+    "mongodb": "^6.1.0",
+    "mongoose": "^7.6.2",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
