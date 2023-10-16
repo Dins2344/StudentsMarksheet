@@ -4,6 +4,8 @@ const fs = require("fs");
 const multer = require("multer");
 const path = require("path");
 
+
+// to create public folder and save csv file in it
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
     if (!fs.existsSync("public")) {
@@ -19,6 +21,8 @@ const storage = multer.diskStorage({
   },
 });
 
+
+//to identify the file and save through storage function
 const upload = multer({
   storage: storage,
   fileFilter: function (req, file, cb) {
@@ -32,9 +36,13 @@ const upload = multer({
 
 const router = express.Router();
 
+// csv file uploading route
 router.post("/upload", upload.single("csvFile"), controller.createData);
 
+// to get result of perticular student
 router.get("/students/:id/result", controller.resultStatus);
+
+//to get the students based on their result
 router.get("/students", controller.getStudents);
 
 module.exports = router;
